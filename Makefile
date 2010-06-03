@@ -1,9 +1,8 @@
-all:
-	(cd deps/mochiweb/src;$(MAKE))
-	(cd src;$(MAKE))
-	(cd examples/basic/src;$(MAKE))
+all: deps
+	./rebar compile
+
+deps:
+	./rebar get-deps
 
 clean:
-	(cd src;$(MAKE) clean)
-	(cd deps/mochiweb/src;$(MAKE) clean)
-	(cd examples/basic/src;$(MAKE) clean)
+	./rebar clean
